@@ -61,7 +61,7 @@ class DQN(nn.Module):
         r = self.Variable(torch.FloatTensor([batch[2]]))
         s_prime = self.Variable(torch.FloatTensor(batch[3]))
         
-        s *= 0.9*0.1
+        s *= 0.9*0.25
         s = s+1
 
         q = self.model(s)
@@ -73,7 +73,7 @@ class DQN(nn.Module):
         td_error = r.squeeze_(0) + torch.mul(torch.max(q_prime, 1)[0], self.gamma).unsqueeze(1) - torch.gather(q, 1, a)
         loss += td_error.pow(2).sum()
         
-        q = 0.1*td_error*s
+        q = 0.25*td_error*s
 
         loss.backward()
         clip_grad_norm(self.model.parameters(), self.max_norm)
