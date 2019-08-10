@@ -61,7 +61,7 @@ class DQN(nn.Module):
         r = self.Variable(torch.FloatTensor([batch[2]]))
         s_prime = self.Variable(torch.FloatTensor(batch[3]))
         
-        s *= 0.9*0.25
+        s *= 0.5*0.25
         s = s+1
 
         q = self.model(s)
