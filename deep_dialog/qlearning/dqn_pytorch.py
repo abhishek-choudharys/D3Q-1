@@ -64,7 +64,16 @@ class DQN(nn.Module):
 
         q = self.model(s)
         q_prime = self.target_model(s_prime)
-       
+        print "s = "
+        print s
+        print "a = "
+        print a
+        print "r = "
+        print r
+        print "s_prime = "
+        print s_prime
+        print "q_prime "
+        print q_prime
 
         # the batch style of (td_error = r + self.gamma * torch.max(q_prime) - q[a])
         td_error = r.squeeze_(0) + torch.mul(torch.max(q_prime, 1)[0], self.gamma).unsqueeze(1) - torch.gather(q, 1, a)
