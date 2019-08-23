@@ -69,7 +69,7 @@ params = {
         'nlg_model_path' : './deep_dialog/models/nlg/lstm_tanh_relu_[1468202263.38]_2_0.610.p',
         'nlu_model_path' : './deep_dialog/models/nlu/lstm_[1468447442.91]_39_80_0.921.p',
         'act_level' : 0,
-        'run_mode' : 0,
+        'run_mode' : 2,
         'auto_suggest' : 0,
         'cmd_input_mode' : 0,
         'experience_replay_pool_size' : 10000,
