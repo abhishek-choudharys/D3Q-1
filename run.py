@@ -508,6 +508,7 @@ def simulation_d3q():
     print "+------------------------------+"
     print "| Collecting Experiences (D3Q)|"
     print "+------------------------------+"
+        
     print "+---------------------------+"
     print "| Collecting Experiences    |"
     print "| From Real Human           |"
